@@ -32,7 +32,11 @@ Array.prototype.shuffle = function() {
 	return input;
 }
 
-var shuffleNums = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+var shuffleNums = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ]
 shuffleNums.shuffle();
 
-alert(shuffleNums);
+var letterClasses = [ "A", "A", "B", "B", "C", "C", "D", "D", "E", "E", "F", "F", "G", "G", "H", "H" ];
+
+$("div").each(function(index, element) {
+	$(element).addClass(letterClasses[index%letterClasses.length]);
+});
