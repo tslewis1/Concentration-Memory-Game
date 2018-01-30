@@ -1,15 +1,51 @@
-.A
+td {
+	background-color: #2DDFB3; 
+	height: 150px;
+	width: 150px; 
+	border-radius: 15px;
+	border-style: dotted;
+	border-width: 2px;
+	border-color: white
+}
 
-.B
+td div.cards {
+	background-repeat: no-repeat;
+	height: 100%;
+	width: 100%;
+	display: none;
+	border-radius: 15px;
+	background-position: center;
+}
 
-.C
+.A {
+	background-image: url("001-animals-1.png");
+}
 
-.D
+.B {
+	background-image: url("002-animals.png");
+}
 
-.E
+.C {
+	background-image: url("003-animal.png");
+}
 
-.F
+.D {
+	background-image: url("004-eggs.png");
+}
 
-.G
+.E {
+	background-image: url("005-dove.png");
+}
 
-.H
+.F {
+	background-image: url("006-dog.png");
+}
+
+.G {
+	background-image: url("007-bird.png");
+}
+
+.H {
+	background-image: url("008-fish.png");
+
+}
