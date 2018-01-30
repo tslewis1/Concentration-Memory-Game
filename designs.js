@@ -12,7 +12,7 @@ function makeGrid() {
 		$("#card-table").append("<tr></tr>");
 		for (j = 1; j <= height; j++) {
 			id++;
-			$("#card-table").children("tr").last().append("<td><div id = " + id + "><img></div></td>");
+			$("#card-table").children("tr").last().append("<td><div id = " + id + " class = 'cards'></div></td>");
 		}
 	}
 }
@@ -46,5 +46,12 @@ for (i = 0; i < 16; i++) {
 	var cardClass = letterClasses [i];
 	$("#" + id).addClass(cardClass);
 };
-	
-alert(shuffleNums);
+
+// Shows image side of the card
+
+$("td").on("click", function() {
+	$(this).children("div").show();
+});
+
+
+
