@@ -53,6 +53,8 @@ for (i = 0; i < 16; i++) {
 let counter = 0;
 let firstID;
 let setsMatched = 0;
+let moves = 0;
+let rating = 3;
 
 $("td").on("click", function() {
 	if($(this).children("div").css("display") == "none") {
@@ -78,6 +80,21 @@ $("td").on("click", function() {
 		// Figures out if the player has won by matching all 16 cards
 		if(setsMatched == 8) {
 		}
+		// Counts moves made by player
+		moves++;
+		$("#moves").text(moves);
+		// Creates star rating system based on number of moves made
+		if (moves <= 20) {
+			rating = 3;
+		}
+		else if(moves <= 32) {
+			rating = 2;
+			$("#star-3").hide();
+		}
+		else {
+			rating = 1;
+			$("#star-2").hide();
+		}
 	}
 });
 
@@ -95,3 +112,5 @@ let currMinutes = 0;
  	}
  	$("#seconds").text(currSeconds);
  }, 1000);
+
+
