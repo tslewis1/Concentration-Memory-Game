@@ -17,7 +17,8 @@ function makeGrid() {
 	}
 }
 
-// This function shuffles the shuffleNums array to generate a random string that will be assigned to cards at random
+// Shuffles the values of an array
+
 Array.prototype.shuffle = function() {
 
 	let input = this;
@@ -34,12 +35,12 @@ Array.prototype.shuffle = function() {
 	return input;
 }
 
+// Adds classes randomly to set ids based on shuffled array.
+
 let shuffleNums = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ]
 shuffleNums.shuffle();
 
 let letterClasses = [ "A", "A", "B", "B", "C", "C", "D", "D", "E", "E", "F", "F", "G", "G", "H", "H" ];
-
-// For loop that adds classes randomly to set ids based on shuffled array.
 
 for (i = 0; i < 16; i++) {
 	let id = shuffleNums [i];
@@ -47,11 +48,11 @@ for (i = 0; i < 16; i++) {
 	$("#" + id).addClass(cardClass);
 };
 
+// Reveals image side of the card and the creates matching logic. Figures out if cards do or don't match based on id and classes.
+
 let counter = 0;
 let firstID;
 let setsMatched = 0;
-
-// Reveals image side of the card and the creates matching logic. Figures out if cards do or don't match based on id and classes.
 
 $("td").on("click", function() {
 	if($(this).children("div").css("display") == "none") {
@@ -74,16 +75,16 @@ $("td").on("click", function() {
 			}
 			counter = 0;
 		}
-// Figures out if the player has won by matching all 16 cards
+		// Figures out if the player has won by matching all 16 cards
 		if(setsMatched == 8) {
 		}
 	}
 });
 
+// Adds timer function and adds current time to HTML
+
 let currSeconds = 0;
 let currMinutes = 0;
-
-// Adds timer function and adds current time to HTML
 
  setInterval(function(){
  	currSeconds++;
