@@ -20,12 +20,12 @@ function makeGrid() {
 // This function shuffles the shuffleNums array to generate a random string that will be assigned to cards at random
 Array.prototype.shuffle = function() {
 
-	var input = this;
+	let input = this;
 
-	for (var i = input.length-1; i>=0; i--) {
+	for (let i = input.length-1; i>=0; i--) {
 
-		var randomIndex = Math.floor(Math.random()*(i+1));
-		var itemAtIndex = input[randomIndex];
+		let randomIndex = Math.floor(Math.random()*(i+1));
+		let itemAtIndex = input[randomIndex];
 
 		input[randomIndex] = input[i];
 		input[i] = itemAtIndex;
@@ -34,24 +34,63 @@ Array.prototype.shuffle = function() {
 	return input;
 }
 
-var shuffleNums = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ]
+let shuffleNums = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ]
 shuffleNums.shuffle();
 
-var letterClasses = [ "A", "A", "B", "B", "C", "C", "D", "D", "E", "E", "F", "F", "G", "G", "H", "H" ];
+let letterClasses = [ "A", "A", "B", "B", "C", "C", "D", "D", "E", "E", "F", "F", "G", "G", "H", "H" ];
 
 // For loop that adds classes randomly to set ids based on shuffled array.
 
 for (i = 0; i < 16; i++) {
-	var id = shuffleNums [i];
-	var cardClass = letterClasses [i];
+	let id = shuffleNums [i];
+	let cardClass = letterClasses [i];
 	$("#" + id).addClass(cardClass);
 };
 
-// Shows image side of the card
+let counter = 0;
+let firstID;
+let setsMatched = 0;
+
+// Reveals image side of the card and the creates matching logic. Figures out if cards do or don't match based on id and classes.
 
 $("td").on("click", function() {
-	$(this).children("div").show();
+	if($(this).children("div").css("display") == "none") {
+		if(counter == 0) {
+			$(this).children("div").show();
+			counter++;
+			firstID = $(this).children("div").attr("id");
+		}
+		else if (counter == 1) {
+			$(this).children("div").show();
+			let currID = $(this).children("div").attr("id");
+			if ($("#" + firstID).attr("class") != $("#" + currID).attr("class")) {
+				setTimeout (function() { 
+					$("#" + currID).hide();
+					$("#" + firstID).hide();
+				}, 500);
+			}
+			else {
+				setsMatched++;
+			}
+			counter = 0;
+		}
+// Figures out if the player has won by matching all 16 cards
+		if(setsMatched == 8) {
+		}
+	}
 });
 
+let currSeconds = 0;
+let currMinutes = 0;
 
+// Adds timer function and adds current time to HTML
 
+ setInterval(function(){
+ 	currSeconds++;
+ 	if (currSeconds == 59) {
+ 		currMinutes ++;
+ 		$("#minutes").text(currMinutes);
+ 		currSeconds = 0;
+ 	}
+ 	$("#seconds").text(currSeconds);
+ }, 1000);
