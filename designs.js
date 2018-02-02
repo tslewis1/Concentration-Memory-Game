@@ -79,10 +79,12 @@ $("td").on("click", function() {
 		}
 		// Figures out if the player has won by matching all 16 cards
 		if(setsMatched == 8) {
+			// When all sets match, the timer stops and a modal pops up with how much time the game took and how many moves, and asks if the player wants to play again.
 			$("#endSeconds").text(currSeconds);
 			$("#endMinutes").text(currMinutes);
 			$("#endMoves").text(moves);
 			$("#congratulationsModal").show();
+			clearInterval(timer);
 		}
 		// Counts moves made by player
 		moves++;
@@ -107,7 +109,7 @@ $("td").on("click", function() {
 let currSeconds = 0;
 let currMinutes = 0;
 
- setInterval(function(){
+let timer = setInterval(function(){
  	currSeconds++;
  	if (currSeconds == 59) {
  		currMinutes ++;
@@ -122,3 +124,12 @@ let currMinutes = 0;
 $("#reset").on("click", function() {
 	document.location.reload(true);
 });
+
+// If player wants to play again, yes button resets the game and no button closes the modal
+$("#yes").on("click", function() {
+	document.location.reload(true);
+});
+
+$("#no").on("click", function () {
+	$("#congratulationsModal").hide();
+})
