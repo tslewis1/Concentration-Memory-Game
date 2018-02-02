@@ -79,15 +79,19 @@ $("td").on("click", function() {
 		}
 		// Figures out if the player has won by matching all 16 cards
 		if(setsMatched == 8) {
+			$("#endSeconds").text(currSeconds);
+			$("#endMinutes").text(currMinutes);
+			$("#endMoves").text(moves);
+			$("#congratulationsModal").show();
 		}
 		// Counts moves made by player
 		moves++;
 		$("#moves").text(moves);
 		// Creates star rating system based on number of moves made
-		if (moves <= 20) {
+		if (moves <= 25) {
 			rating = 3;
 		}
-		else if(moves <= 32) {
+		else if(moves <= 40) {
 			rating = 2;
 			$("#star-3").hide();
 		}
@@ -113,4 +117,8 @@ let currMinutes = 0;
  	$("#seconds").text(currSeconds);
  }, 1000);
 
+// Adds reset button to start game over
 
+$("#reset").on("click", function() {
+	document.location.reload(true);
+});
