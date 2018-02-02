@@ -2,19 +2,23 @@ body {
 	background-color: #0B4758;
 }
 
-p {
+h1, h2, p {
 	color: white;
 	text-align: center;
 	font-family: 'Shadows Into Light', cursive;
-	margin: 2px;
+}
+
+#title {
+	margin: 0px;
+	padding-top: 0px;
+}
+
+#time, #gameMoves {
+	margin: 0px;
 }
 
 h1 {
-	color: white;
-	text-align: center;
-	font-family: 'Shadows Into Light', cursive;
 	font-size: 50px;
-	margin: 5px;
 }
 
 #card-table {
@@ -23,8 +27,8 @@ h1 {
 
 td {
 	background-color: #2DDFB3; 
-	height: 150px;
-	width: 150px; 
+	height: 130px;
+	width: 130px; 
 	border-radius: 15px;
 	border-style: dotted;
 	border-width: 2px;
@@ -73,8 +77,8 @@ td div.cards {
 }
 
 .stars {
-	width: 35px;
-	height: 35px;
+	width: 25px;
+	height: 25px;
 	padding: 0px;
 	margin: 0px;
 }
@@ -82,6 +86,7 @@ td div.cards {
 #star-img {
 	text-align: center;
 }
+
 .modal {
 	display: none;
 	position: fixed;
@@ -93,13 +98,36 @@ td div.cards {
 }
 
 .modal-content {
+	border-radius: 15px;
 	background-color: #F3C83C;
 	margin: 15% auto;
 	padding: 20px;
 	border: 1px solid white;
-	width: 75%;
+	width: 60%;
+}
+
+#congratulations {
+	margin: 0px;
+}
+
+#buttons {
+	text-align: center;
+	margin-top: 5px; 
+}
+
+#yes, #no {
+	display: inline-block;
+	background-color: white;
+	border: none;
+	border-radius: 5px;
+	font-family: 'Shadows Into Light', cursive;
+
 }
 
 #reset {
-	margin-top: 5px; 
+	margin-top: 5px;
+	margin-bottom: 0px; 
+	font-family: 'Shadows Into Light', cursive;
+	border-radius: 5px;
+
 }
