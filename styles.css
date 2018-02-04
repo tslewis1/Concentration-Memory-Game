@@ -25,6 +25,8 @@ h1 {
 	margin: auto;
 }
 
+/*Cards Styling*/
+
 td {
 	background-color: #2DDFB3; 
 	height: 130px;
@@ -43,6 +45,8 @@ td div.cards {
 	border-radius: 15px;
 	background-position: center;
 }
+
+/*Card Images*/
 
 .A {
 	background-image: url("001-animals-1.png");
@@ -76,6 +80,8 @@ td div.cards {
 	background-image: url("008-fish.png");
 }
 
+/*Star Ratings*/
+
 .stars {
 	width: 25px;
 	height: 25px;
@@ -86,6 +92,8 @@ td div.cards {
 #star-img {
 	text-align: center;
 }
+
+/*Congratulations Popup*/
 
 .modal {
 	display: none;
@@ -110,6 +118,8 @@ td div.cards {
 	margin: 0px;
 }
 
+/*Buttons*/
+
 #buttons {
 	text-align: center;
 	margin-top: 5px; 
@@ -131,3 +141,5 @@ td div.cards {
 	border-radius: 5px;
 
 }
+
+/*Media Queries*/
