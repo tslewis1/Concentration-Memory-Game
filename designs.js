@@ -126,6 +126,7 @@ $("#reset").on("click", function() {
 });
 
 // If player wants to play again, yes button resets the game and no button closes the modal
+
 $("#yes").on("click", function() {
 	document.location.reload(true);
 });
