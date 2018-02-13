@@ -13,8 +13,13 @@ h1, h2, p {
 	padding: 0px;
 }
 
-#time, #gameMoves {
+#time {
 	margin: 0px;
+}
+
+#gameMoves {
+	margin-top: 0px;
+	margin-bottom: 5px;
 }
 
 h1 {
@@ -135,6 +140,9 @@ td div.cards {
 
 }
 
+#no, #yes {
+	width: 28px;
+}
 #reset {
 	margin-top: 0px;
 	margin-bottom: 5px; 
