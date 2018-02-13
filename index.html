@@ -9,6 +9,9 @@
 </head>
 <body>
 	<h1 id="title">Concentration!</h1>
+	<div style="text-align: center;">
+		<button id="reset">reset</button>
+	</div>
 	<div id="star-img">
 				<img id="star-1" class="stars" src="gold-star.png">
 				<img id="star-2" class="stars" src="gold-star.png">
@@ -16,6 +19,7 @@
 			</div>
 	<p id="time"><span id = "minutes">0</span> minutes, <span id = "seconds">0</span> seconds</p>
 	<p id="gameMoves"><span id = "moves">0</span> moves</p>
+
 	<div id="congratulationsModal" class="modal">
 		<div class="modal-content">
 			<h1 id="congratulations">Congratulations!</h1>
@@ -33,9 +37,6 @@
 		</div>
 	</div>
 	<table id="card-table"></table>
-	<div style="text-align: center;">
-		<button id="reset">reset</button>
-	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="designs.js"></script>
