@@ -10,7 +10,7 @@ h1, h2, p {
 
 #title {
 	margin: 0px;
-	padding-top: 0px;
+	padding: 0px;
 }
 
 #time, #gameMoves {
@@ -136,8 +136,8 @@ td div.cards {
 }
 
 #reset {
-	margin-top: 5px;
-	margin-bottom: 0px; 
+	margin-top: 0px;
+	margin-bottom: 5px; 
 	font-family: 'Shadows Into Light', cursive;
 	border-radius: 5px;
 
