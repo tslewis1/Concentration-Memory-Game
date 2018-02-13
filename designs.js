@@ -50,20 +50,23 @@ for (i = 0; i < 16; i++) {
 
 // Reveals image side of the card and the creates matching logic. Figures out if cards do or don't match based on id and classes.
 
-let counter = 0;
+let sidesCounter = 0;
 let firstID;
 let setsMatched = 0;
 let moves = 0;
 let rating = 3;
+let currSeconds = 0;
+let currMinutes = 0;
+let timer;
 
 $("td").on("click", function() {
 	if($(this).children("div").css("display") == "none") {
-		if(counter == 0) {
+		if(sidesCounter == 0) {
 			$(this).children("div").show();
-			counter++;
+			sidesCounter++;
 			firstID = $(this).children("div").attr("id");
 		}
-		else if (counter == 1) {
+		else if (sidesCounter == 1) {
 			$(this).children("div").show();
 			let currID = $(this).children("div").attr("id");
 			if ($("#" + firstID).attr("class") != $("#" + currID).attr("class")) {
@@ -75,7 +78,7 @@ $("td").on("click", function() {
 			else {
 				setsMatched++;
 			}
-			counter = 0;
+			sidesCounter = 0;
 		}
 		// Figures out if the player has won by matching all 16 cards
 		if(setsMatched == 8) {
@@ -88,6 +91,21 @@ $("td").on("click", function() {
 		}
 		// Counts moves made by player
 		moves++;
+
+// Adds timer function and adds current time to HTML
+
+		if (moves == 1) {
+			timer = setInterval(function(){
+ 				currSeconds++;
+ 				if (currSeconds == 59) {
+ 					currMinutes ++;
+ 					$("#minutes").text(currMinutes);
+ 					currSeconds = 0;
+ 				}
+ 				$("#seconds").text(currSeconds);
+ 			}, 1000);
+		}
+
 		$("#moves").text(moves);
 		// Creates star rating system based on number of moves made
 		if (moves <= 30) {
@@ -104,20 +122,6 @@ $("td").on("click", function() {
 	}
 });
 
-// Adds timer function and adds current time to HTML
-
-let currSeconds = 0;
-let currMinutes = 0;
-
-let timer = setInterval(function(){
- 	currSeconds++;
- 	if (currSeconds == 59) {
- 		currMinutes ++;
- 		$("#minutes").text(currMinutes);
- 		currSeconds = 0;
- 	}
- 	$("#seconds").text(currSeconds);
- }, 1000);
 
 // Adds reset button to start game over
 
