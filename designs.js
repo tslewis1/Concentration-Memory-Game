@@ -90,7 +90,7 @@ $("td").on("click", function() {
 		moves++;
 		$("#moves").text(moves);
 		// Creates star rating system based on number of moves made
-		if (moves <= 25) {
+		if (moves <= 30) {
 			rating = 3;
 		}
 		else if(moves <= 40) {
